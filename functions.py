@@ -28,7 +28,7 @@ def gaussian(x, gamma, beta, alpha):
 
 def plot_overview(x, ccf, ccf_tpl, power, power_tpl, phase, phase_tpl, freq, freq_HL, freq_HN):
 
-	plt.rcParams.update({'font.size': 12})
+	plt.rcParams.update({'font.size': 15})
 	fig, axes 	= plt.subplots(figsize=(18, 11))
 	plt.subplots_adjust(hspace=0.3, wspace=0.3) # the amount of width and height reserved for blank space between subplots
 
@@ -39,6 +39,7 @@ def plot_overview(x, ccf, ccf_tpl, power, power_tpl, phase, phase_tpl, freq, fre
 	# Singal # 
 	plt.subplot(231)
 	plt.plot(x, ccf, 'k', alpha=alpha)
+	plt.xlim([-10,10])
 	plt.title('Signal (CCF)')
 	plt.xlabel('Velocity [km/s]')
 	plt.ylabel('Normalized intensity')
@@ -47,6 +48,7 @@ def plot_overview(x, ccf, ccf_tpl, power, power_tpl, phase, phase_tpl, freq, fre
 	# Singal deformation # 
 	plt.subplot(234)
 	plt.plot(x, ccf - ccf_tpl, 'k', alpha=alpha)
+	plt.xlim([-10,10])
 	# plt.ylim([-0.003, 0.003])
 	plt.title('Signal deformation')
 	plt.xlabel('Velocity [km/s]')
@@ -62,12 +64,12 @@ def plot_overview(x, ccf, ccf_tpl, power, power_tpl, phase, phase_tpl, freq, fre
 	plt.grid(True)
 
 	# differential power spectrum # 
-	plt.subplot(235)
-	plt.plot(freq[idx], power[idx]-power_tpl[idx], 'k', alpha=alpha)
-	plt.title('Differential power spectrum')
-	plt.xlabel(r'$\xi$ [s/km]')
-	plt.ylabel('Power')
-	plt.grid(True)
+	# plt.subplot(235)
+	# plt.plot(freq[idx], power[idx]-power_tpl[idx], 'k', alpha=alpha)
+	# plt.title('Differential power spectrum')
+	# plt.xlabel(r'$\xi$ [s/km]')
+	# plt.ylabel('Power')
+	# plt.grid(True)
 
 	# differential phase spectrum 
 	plt.subplot(233)

@@ -40,7 +40,7 @@ if 1:
 
 	power, phase, freq = FT(ccf2, 0.1)
 	power_tpl, phase_tpl, freq_tpl = FT(ccf1, 0.1)
-	plot_overview(X, ccf2, ccf1, power, power_tpl, phase, phase_tpl, freq, 0.14, 2)
+	plot_overview(X, ccf2, ccf1, power, power_tpl, phase, phase_tpl, freq, 0.14, 0.5)
 	plt.savefig('./simulation.png')
 	plt.close('all')
 	# plt.show()
